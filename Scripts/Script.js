@@ -4,7 +4,7 @@ var myApp = angular
       $scope.employe =
       {
           firstName: "Vadim",
-          lastName: "Leviev",
+          lastName: "Levoem",
           gender: "male"
       }
         $scope.message ="Hello angular";
