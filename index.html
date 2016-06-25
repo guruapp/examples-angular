@@ -9,36 +9,27 @@
 </head>
 <body >
 <div ng-controller="myController">
- <table>
-     <tr>
-         <td>First Name</td>
-         <td><input type="text" ng-model="employe.firstName"></td>
-     </tr>
-     <tr>
-         <td>LAst Name</td>
-         <td><input type="text" ng-model="employe.lastName"></td>
-     </tr>
-     <tr>
-     <td>gender</td>
-     <td><input type="text" ng-model="employe.gender"></td>
- </tr>
- </table>
+    <table>
+        <tr ng-repeat="employe in employes">
+            <td>
+                {{employe.firstName}}
+            </td>
+            <td>
+                {{employe.lastName}}
+            </td>
+            <td>
+                {{employe.gender}}
+            </td>
+            <td>
+                {{employe.salary}}
+           </td>
 
 
-<br><br>
-    <input type="text" ng-model="message" />
-    <div>
-        {{message}}
-    </div>
-    <select ng-model="message">
-        <option value="option1">my option 1</option>
-        <option value="option2">my option 2</option>
-        <option value="{{message}}">{{message}}</option>
-        <option value="option4">my option 4</option>
-    </select>
-<br>
-    <textarea ng-model="message"></textarea>
-</div>
+        </tr>
+    </table>
+
+
+ </div>
 
 </body>
 </html>
