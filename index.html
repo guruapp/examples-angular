@@ -4,29 +4,21 @@
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/Script.js"></script>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Document 1</title>
 
 </head>
 <body >
 <div ng-controller="myController">
-    <table>
-        <tr ng-repeat="employe in employes">
-            <td>
-              test 1 First name {{employe.firstName}}
-            </td>
-            <td>
-               Last name {{employe.lastName}}
-            </td>
-            <td>
-                Gender {{employe.gender}}
-            </td>
-            <td>
-                Salary {{employe.salary}}
-           </td>
-
-
-        </tr>
-    </table>
+<ul>
+<li ng-repeat="country in countryes">
+{{country.name}} - index = {{$index}}
+    <ul>
+        <li ng-repeat="city in country.city">
+            {{city.name}} - index = {{$index}}
+        </li>
+    </ul>
+</li>
+</ul>
 
 
  </div>
