@@ -9,17 +9,14 @@
 </head>
 <body >
 <div ng-controller="myController">
-<ul>
-<li ng-repeat="country in countryes">
-{{country.name}} - index = {{$index}}
-    <ul>
-        <li ng-repeat="city in country.city">
-            {{city.name}} - index = {{$index}}
-        </li>
-    </ul>
-</li>
+<ul ng-repeat="tech in technologies">
+    <li>
+        Name {{tech.name}}
+        Likes: {{tech.likes}}
+        <input type="button" value="+" ng-click="incrementLikes(tech)" >
+        <input type="button" value="-" ng-click="incrementDislikes(tech)" >
+    </li>
 </ul>
-
 
  </div>
 
