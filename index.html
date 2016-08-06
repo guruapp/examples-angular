@@ -3,20 +3,42 @@
 <head>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/Script.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
     <meta charset="UTF-8">
     <title>Document 1</title>
 
 </head>
 <body >
 <div ng-controller="myController">
-<ul ng-repeat="tech in technologies">
-    <li>
-        Name {{tech.name}}
-        Likes: {{tech.likes}}
-        <input type="button" value="+" ng-click="incrementLikes(tech)" >
-        <input type="button" value="-" ng-click="incrementDislikes(tech)" >
-    </li>
-</ul>
+
+    <table>
+        <thead>
+        <tr>
+            <th ng-click="sortData('name')">
+                Name<div ng-class="getSortClass('name')"></div>
+            </th>
+            <th ng-click="sortData('dateOfBirth')">
+             Date of Birth <div ng-class="getSortClass('dateOfBirth')"></div>
+            </th>
+            <th ng-click="sortData('gender')">
+                Gender <div ng-class="getSortClass('gender')"></div>
+            </th>
+            <th ng-click="sortData('salary')">Salary <div ng-class="getSortClass('salary')"></div></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="employe in employees | limitTo:rawLimit | orderBy:sortColumn:reverseSort">
+            <td>{{employe.name | uppercase}}</td>
+            <td>{{employe.dateOfBirth | date:"dd/MM/yyyy"  }}</td>
+            <td>{{employe.gender | lowercase}}</td>
+            <td>{{employe.salary | number:"2"}}</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+<input type="number" ng-model="rawLimit" max="5" min="0" step="1">
+
 
  </div>
 
