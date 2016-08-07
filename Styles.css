@@ -15,11 +15,11 @@ td
 }
 .arrow-up
 {
-    width:0;
-    height: 0;
+    width:0px;
+    height:0px;
+    border-right:5px solid transparent;
     border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 10px solid black;
+    border-bottom:10px solid red;
     display: inline-block;
 
 }

@@ -10,7 +10,10 @@
 </head>
 <body >
 <div ng-controller="myController">
-
+Search <input type="text" placeholder="Search employees" ng-model="searchText" />
+                             <!-- to search in specific column add searchText.salary -->
+    <br />
+    <br />
     <table>
         <thead>
         <tr>
@@ -27,7 +30,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="employe in employees | limitTo:rawLimit | orderBy:sortColumn:reverseSort">
+        <tr ng-repeat="employe in employees | limitTo:rawLimit | orderBy:sortColumn:reverseSort | filter:searchText">
             <td>{{employe.name | uppercase}}</td>
             <td>{{employe.dateOfBirth | date:"dd/MM/yyyy"  }}</td>
             <td>{{employe.gender | lowercase}}</td>
