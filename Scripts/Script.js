@@ -9,7 +9,7 @@ var myApp = angular
           {name:"Todd",dateOfBirth: new Date("November 23,1980"), gender:"Male",salary:1200.788}
       ];
 
-      $scope.rawLimit = 3;
+      $scope.rawLimit = 5;
       $scope.sortColumn = "name";
       $scope.reverseSort = false;
       $scope.sortData = function (column)
@@ -26,7 +26,7 @@ var myApp = angular
           return '';
 
       }
-     
+
 
     }]);
 
