@@ -27,6 +27,35 @@ var myApp = angular
 
       }
 
+      // search only name and
+
+        $scope.search = function (item)
+        {
+            if($scope.searchText == undefined)
+            {
+                return true;
+            }
+            else
+            {
+                if(item.name.toLowerCase().lastIndexOf($scope.searchText.toLowerCase()) != -1 ||
+                    item.gender.toLowerCase().lastIndexOf($scope.searchText.toLowerCase()) != -1 )
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
 
     }]);
+
+
+
+
+
+
+
+
+
 

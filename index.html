@@ -10,7 +10,7 @@
 </head>
 <body >
 <div ng-controller="myController">
-Search <input type="text" placeholder="Search employees" ng-model="searchText" />
+Search <input type="text" placeholder="Search name and gender" ng-model="searchText" />
       <input type="checkbox" ng-model="exactMatch">
                              <!-- to search in specific column add searchText.salary -->
     <br />
@@ -31,7 +31,7 @@ Search <input type="text" placeholder="Search employees" ng-model="searchText" /
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="employe in employees | limitTo:rawLimit | orderBy:sortColumn:reverseSort | filter:searchText:exactMatch">
+        <tr ng-repeat="employe in employees | limitTo:rawLimit | orderBy:sortColumn:reverseSort | filter:search">
             <td>{{employe.name | uppercase}}</td>
             <td>{{employe.dateOfBirth | date:"dd/MM/yyyy"  }}</td>
             <td>{{employe.gender | lowercase}}</td>
